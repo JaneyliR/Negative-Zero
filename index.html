@@ -1,0 +1,100 @@
+<html>
+    <body>
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Do you think Negative Zero is a number??</h1>
+          <p id="nopeMessage" style="display: none; color: red; font-szie: 20px; margin-top:10px;"> 
+          Go find your "Nope" Button! Ugh.
+          </p>
+ 
+             <img
+ id="NegativeMangoImage" src="data:image/jpg; blob:chrome-untrusted://media-app/03c031ea-67e3-4c9f-852c-bec60287cd7c" alt="Negative Zero Mango Image" style="max-width: 300px; height: auto;">
+            <img id="NegativeMango" src="blob:chrome-untrusted://media-app/03c031ea-67e3-4c9f-852c-bec60287cd7c" alt="IMG_1037.jpg"
+            style="max-width: 300px; height: auto;"/>
+ 
+            <br/>
+            <br/>
+            <br/>
+            <button id="yesButton">Yup!</button>
+            <button id="noButton">Nope.</button>
+        </div>
+
+        <style>
+            body {
+                background: linear-gradient(to bottom, #fa9393, #fae993);
+            }
+            div {
+                text-align: center;
+                vertical-align: middle;
+            }
+            h1 {
+                color: #e81589;
+            }
+            #yesButton {
+                background-color: #61c274;
+                transition: transform 0.3s;
+                margin-right: 5px;
+                width: 120px;
+                font-size: 30px;
+                height: 40px;
+                color: #fff;
+                margin-left: -140px;
+            }
+            #noButton {
+                position: absolute;
+                background-color: #ef476f;
+                transition: transform 0.3s;
+                margin-left: 10px;
+                width: 120px;
+                /*font-size: 20px;*/ 
+                height: 40px;
+                color: #fff;
+            }
+        </style>
+        <script>
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+
+            function showAlert() {
+                alert("YAY! I knew you would come to your senses. <3");
+            }
+
+            var yesButton = document.getElementById("yesButton");
+            var noButton = document.getElementById("noButton");
+            var MangoImage = document.getElementById("NegativeMango");
+
+            var noTexts = ["Are you sure?", "You pressed the wrong one.", "You clearly meant \"Yup!", "Pookie please", "Don't do this to me :(", "You're breaking my heart", "I'm gonna cry", "Tsk. Tsk.", "Rethink your life."];
+            var imageSources = ["https://photos.fife.usercontent.google.com/pw/AP1GczOWYBFvSxJCR4r-f08PFVEnuyKJVTttIqum0FvA7OdbA1r6RWqsma-edg=w680-h680-s-no-gm?authuser=0"];
+
+            noButton.addEventListener("click", change);
+   var hasClickedNo = fals; //was no clicked. I don't know.
+            
+            function change() {
+                var randomIndex = Math.floor(Math.random() * noTexts.length);
+                var randomText = noTexts[randomIndex];
+                noButton.innerText = randomText;
+                if (!hasClickedNo) {
+                document.getElementById("nopeMessage").style.display = "block";
+                hasClickedNo = true; //Only happens once. Kind of flags it
+                }
+
+                var i = Math.floor(Math.random() * 1000) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                noButton.style.left = i + "px";
+                noButton.style.top = j + "px";
+
+                var currentWidth = yesButton.offsetWidth;
+                var currentHeight = yesButton.offsetHeight
+                yesButton.style.width = currentWidth + 30 + "px";
+                yesButton.style.height = currentHeight + 10 + "px";
+
+                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                MangoImage.src = imageSources[randomImageIndex];
+            }
+        </script>
+    </body>
+</html>
