@@ -8,13 +8,10 @@
             <br/>
             <br/>
             <h1>Do you think Negative Zero is a number??</h1>
-          <p id="nopeMessage" style="display: none; color: red; font-szie: 20px; margin-top:10px;"> 
-          Go find your "Nope" Button! Ugh.
-          </p>
- 
-             <img
- id="NegativeMangoImage" src="data:image/jpg; blob:chrome-untrusted://media-app/03c031ea-67e3-4c9f-852c-bec60287cd7c" alt="Negative Zero Mango Image" style="max-width: 300px; height: auto;">
-            <img id="NegativeMango" src="blob:chrome-untrusted://media-app/03c031ea-67e3-4c9f-852c-bec60287cd7c" alt="IMG_1037.jpg"
+            <p id="nopeMessage" style="display: none; color: red; font-size: 20px; margin-top:10px;"> 
+            Go find your "Nope" Button! Ugh.
+            </p>
+            <img id="MangoImage" src="blob:chrome-untrusted://media-app/03c031ea-67e3-4c9f-852c-bec60287cd7c" alt="Mango.jpg"
             style="max-width: 300px; height: auto;"/>
  
             <br/>
@@ -65,13 +62,12 @@
 
             var yesButton = document.getElementById("yesButton");
             var noButton = document.getElementById("noButton");
-            var MangoImage = document.getElementById("NegativeMango");
+            var MangoImage = document.getElementById("Mango");
 
             var noTexts = ["Are you sure?", "You pressed the wrong one.", "You clearly meant \"Yup!", "Pookie please", "Don't do this to me :(", "You're breaking my heart", "I'm gonna cry", "Tsk. Tsk.", "Rethink your life."];
-            var imageSources = ["https://photos.fife.usercontent.google.com/pw/AP1GczOWYBFvSxJCR4r-f08PFVEnuyKJVTttIqum0FvA7OdbA1r6RWqsma-edg=w680-h680-s-no-gm?authuser=0"];
 
             noButton.addEventListener("click", change);
-   var hasClickedNo = fals; //was no clicked. I don't know.
+   var hasClickedNo = false; //was no clicked. I don't know.
             
             function change() {
                 var randomIndex = Math.floor(Math.random() * noTexts.length);
@@ -91,9 +87,6 @@
                 var currentHeight = yesButton.offsetHeight
                 yesButton.style.width = currentWidth + 30 + "px";
                 yesButton.style.height = currentHeight + 10 + "px";
-
-                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
-                MangoImage.src = imageSources[randomImageIndex];
             }
         </script>
     </body>
